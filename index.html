@@ -26,12 +26,22 @@
     <script>
         //para interceptar o evento do click do usuario
         document.querySelectorAll('a').forEach(link => {
+
+           const conteudo = document.getElementById('conteudo')
+
            link.onclick = function(e){
             //CODIGO PARA PREVINIR O EVENTO
             e.preventDefault()
             //AQUI JA NAO NAVEGA PARA OUTRA PAGINA, MAS NO 
             //CONSOLE DO BROWSER PODEMOS VER O RESULTAO...ACAO!!!!
-            console.log('ACAO!!!!')
+            // console.log('ACAO!!!!') //...excluido porque ja vimos que funcionou
+
+            //Obtendo o conteudo com um a requisicao ajax
+            // const conteudo = document.getElementById('conteudo') migrando acima
+            //requisicao ajax fetch
+            fetch(link.href)
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html)
            }
         } )
 
