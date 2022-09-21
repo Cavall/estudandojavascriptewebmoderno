@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+</head>
+<body>
+    <header>
+        <h1>MEUS EXERCICIOS DE HTML WEB MODERNO</h1>
+    </header>
+    <nav>
+        <a href="testando1.html"> 00 - Teste</a>
+    </nav>
+
+    <section id="conteudo"></section>
+
+    <footer>
+        <br>
+        Curso de Web Moderno
+    </footer>
+    <!--Para capturar o conteudo de um arquivo e exibir na pagina
+    principal, usando requisicao ajax e java scrip-->
+
+    <script>
+        //para interceptar o evento do click do usuario
+        document.querySelectorAll('a').forEach(link => {
+           link.onclick = function(e){
+            //CODIGO PARA PREVINIR O EVENTO
+            e.preventDefault()
+            //AQUI JA NAO NAVEGA PARA OUTRA PAGINA, MAS NO 
+            //CONSOLE DO BROWSER PODEMOS VER O RESULTAO...ACAO!!!!
+            console.log('ACAO!!!!')
+           }
+        } )
+
+    </script>
+
+
+
+</body>
+</html>
