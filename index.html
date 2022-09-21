@@ -11,8 +11,9 @@
         <h1>MEUS EXERCICIOS DE HTML WEB MODERNO</h1>
     </header>
     <nav>
-        <a href="testando1.html"> 00 - Teste</a> |
-        <a href="temporario.html"> 01 - TEMPORARIO</a>
+        <!--Substituindo href por propriedade personalizada wm-navegar -->
+        <a href wm-navegar="testando1.html"> 00 - Teste</a> |
+        <a href wm-navegar="temporario.html"> 01 - TEMPORARIO</a>
     </nav>
 
     <section id="conteudo"></section>
@@ -26,7 +27,7 @@
 
     <script>
         //para interceptar o evento do click do usuario
-        document.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('[wm-navegar]').forEach(link => {
 
            const conteudo = document.getElementById('conteudo')
 
@@ -40,7 +41,7 @@
             //Obtendo o conteudo com um a requisicao ajax
             // const conteudo = document.getElementById('conteudo') migrando acima
             //requisicao ajax fetch
-            fetch(link.href)
+            fetch(link.getAttribute('wm-navegar'))
                 .then(resp => resp.text())
                 .then(html => conteudo.innerHTML = html)
            }
