@@ -58,7 +58,11 @@
         folder.onclick = function(e){
         //codigo para capturar proximo elemento a partir de folder
         const ul = folder.nextElementSibling;
-        console.log (ul);
+        //codigo para modificar a visibilidade do display
+        const alternaDisplay = ul.style.display;
+        //alternando o display com o click do mouse
+        ul.style.display = alternaDisplay === 'none' ? 'block' : 'none';
+
         }
     })
     
