@@ -20,7 +20,7 @@
                     <li>rotas.js</li>
                     <li>servidor.js</li>
                     <li>controler.js</li>
-                    </ul>
+                </ul>
             </li>
         </ul>
     </li>
@@ -33,7 +33,7 @@
                     <li>app.css</li>
                     <li>app.js</li>
                     <li>index.html</li>
-                    
+             
                 </ul>
             </li>
         </ul>
@@ -54,5 +54,14 @@
 <link rel="stylesheet" href="tree.css">
 
 <script>
+    document.querySelectorAll('[ads-folder]').forEach(folder => {
+        folder.onclick = function(e){
+        //codigo para capturar proximo elemento a partir de folder
+        const ul = folder.nextElementSibling;
+        console.log (ul);
+        }
+    })
+    
+
     console.log('Verifique se tem isso no console do browser...Tem?????');
 </script>
