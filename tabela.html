@@ -1,0 +1,37 @@
+<h1>DESENHANDO UMA TABELA</h1>
+
+<h4>Definindo o corpo da tabela. Normalmente cabecalho, corpo e rodape</h4>
+
+<table>
+    <!-- podemos usar a tag <caption></caption> para definir o que representa a tabela -->
+    <caption>Produtos</caption>
+    <thead>  <!--cabecalho com uma linha e quatro colunas-->
+        <tr> 
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preco</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody> <!--corpo da tabela com duas linhas e quatro colunas-->
+        <tr>
+            <td>Notebook</td>
+            <td>10</td>
+            <td>2000,00</td>
+            <td>20000,00</td>
+        </tr>
+        <tr>
+            <td>Microfone</td>
+            <td>2</td>
+            <td>200,00</td>
+            <td>400,00</td>
+        </tr>
+    <tfoot> <!--Rodape ou pe da tabela com uma linha e quatro colunas
+    sendo que as tres primeiras colunas foram emcpasuladas na primeira-->
+        <tr>
+            <td colspan="3">Total do item</td>
+            <td> 20400,00</td>
+        </tr>
+    </tfoot>
+    </tbody>
+</table>
