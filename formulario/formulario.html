@@ -4,23 +4,46 @@
     <input type="text" name="nome" > <!--Entrada tipo texto-->
     <input type="password" name="senha"> <!--Entrada tipo password para senha-->
     <textarea name="biografia"  cols="30" rows="10"></textarea> <!-- Box de Entrada para  texto-->
+    
     <div>
         <input type="radio" name="tipo" value="Administrador"> Administrador
         <input type="radio" name="tipo" value="Colaborador"> Colaborador
         <input type="radio" name="tipo" value="Professor">Professor
+    </div>
+    
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+   
+    <select name="estado" >
+        <option value="">Selecione</option>
+        <option value="ba">Bahia</option>
+        <option value="mg">Minas Gerais</option>
+        <option value="sp">Sao Paulo</option>
+        <option value="rj">Rio de Janeiro</option>
+    </select>
+
+    <select name="interesses" multiple size="7">
+        <option value="Java">Java</option>
+        <option value="PHP">PHP</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="C++">C++</option>
+        <option value="HTML">Html</option>
+
+    </select>
+
     <button>Incluir</button>
 </form>
 
 <style>
     
     
-    input, textarea      {
+    input, textarea, select     {
         display: block;
         margin-bottom: 20px;
     }
 
-    input[type=radio] {
-
+    input[type=radio], input[type=checkbox]{
         display: inline;
     }
 
