@@ -1,6 +1,8 @@
 <h1>Formularios</h1>
 <!--requisicao http com metodo post-->
-<form action="http://localhost:3003/usuarios" method="POST">
+<form action="" method="POST">
+    <input type="hidden" name="id" value="7"> <!--imput escondido so para uso especifico-->
+
     <input type="text" name="nome" > <!--Entrada tipo texto-->
     <input type="password" name="senha"> <!--Entrada tipo password para senha-->
     <textarea name="biografia"  cols="30" rows="10"></textarea> <!-- Box de Entrada para  texto-->
@@ -32,7 +34,8 @@
 
     </select>
 
-    <button>Incluir</button>
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/7">Alterar</button>
 </form>
 
 <style>
