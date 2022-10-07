@@ -4,13 +4,24 @@
     <input type="text" name="nome" > <!--Entrada tipo texto-->
     <input type="password" name="senha"> <!--Entrada tipo password para senha-->
     <textarea name="biografia"  cols="30" rows="10"></textarea> <!-- Box de Entrada para  texto-->
+    <div>
+        <input type="radio" name="tipo" value="Administrador"> Administrador
+        <input type="radio" name="tipo" value="Colaborador"> Colaborador
+        <input type="radio" name="tipo" value="Professor">Professor
     <button>Incluir</button>
 </form>
 
 <style>
+    
+    
     input, textarea      {
         display: block;
         margin-bottom: 20px;
+    }
+
+    input[type=radio] {
+
+        display: inline;
     }
 
 </style>
