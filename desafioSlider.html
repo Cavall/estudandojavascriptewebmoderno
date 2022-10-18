@@ -50,7 +50,7 @@
         }
 
         .circulo{
-            width: 400px;
+            width: 450px;
             background-color: rgb(0, 255, 85);
             
         }
@@ -70,7 +70,7 @@
             background-image: url("MyImagens/car2-ge840881e2_640.png");
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 200%;
+            background-size: 100%;
 
 
 
@@ -91,11 +91,44 @@
             }
         }
 
-            //testando codigo com callback
+           /* //testando codigo com callback
             const p = document.querySelector('[ads-slider] > p');
             p.style.display = 'block';
+            //chamando a funcao mover conforme desejo
+            mover(p, 1500, -400, 5, () => {
+                console.log('Terminou o slider...')
+            })*/
 
-        
+            // definindo uma funcao para cpaturar e exibir os slides
+            function slider(){
+                const elementos = document.querySelectorAll('[ads-slider] >p')
+                const slides = Array.from(elementos) //criando uma arrey com elementos
+                exibirSlide(slides, slides[0])
+            }
+
+            function exibirSlide(slides, slide) {
+                slide.style.display = 'block'
+
+                const inicio = innerWidth
+                const fim = -slide.clientWidth
+
+                slide.style.left = `${inicio}px`
+
+                mover(slide, inicio, fim, 5, () => {
+                    //slide.style.display = none;
+                    exibirSlide(slides, getProximo(slides, slide))
+                    slide.style.display = none
+
+                })
+            }
+                function getProximo(lista, atual){
+                    const i = lista.indexOf(atual) + 1
+                    return i < lista.length ? lista[i] : lista[0]
+                }
+
+                slider()
+            
+      
     </script>
 
 
