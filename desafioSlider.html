@@ -1,5 +1,7 @@
 <h1>MINHAS IMAGENS FAVORITAS </h1>
-  
+<h2>Acessar pela url 127.0.0.1:5500/desafioSlider</h2>
+
+    <div ads-slider >
     <P>
         <img src="MyImagens/architecture-g9e8f99a8e_640.jpg" 
         alt="Casa fora da cidade"
@@ -30,7 +32,7 @@
     </p>
 
     <p class = "cidade"></p> 
-
+   
     <p>
         <picture>
             <source srcset="MyImagens/fruit-gb1a215a61_640.png" 
@@ -38,9 +40,15 @@
             <img src="MyImagens/fruit-pequena.png" alt="logo" >
         </picture>
     </p>
+</div>
 
     <style>
-        
+        /*Incuir css para puxar as imagens que se encontram dentro das tags p para o mesmo lugar na div E PARA ESCONDE-LAS*/
+        p {
+            position: absolute; /*PUXA TODAS AS IMAGENS PARA A POSICAO ABSOLUTA DA DIV..MESMO LUGAR NA PAGINA*/
+            display:none ; /*imagens ficam invisiveis na pagina*/
+        }
+
         .circulo{
             width: 400px;
             background-color: rgb(0, 255, 85);
@@ -63,7 +71,31 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: 200%;
+
+
+
         }
     </style>
+
+    <script>
+        //funcao para mover as imagen horizontalmente dentro da pagina
+        function mover(elemento, posicaoInicial, posicaoFinal, deslocamento, callback){
+            const novaPosicao = posicaoInicial - deslocamento;
+            if (novaPosicao >= posicaoFinal) {
+                elemento.style.left = novaPosicao + 'px';
+                //criando um temporizador
+                setTimeout( () => mover(elemento, novaPosicao, posicaoFinal, deslocamento, callback), 7);
+
+            } else {
+                callback()
+            }
+        }
+
+            //testando codigo com callback
+            const p = document.querySelector('[ads-slider] > p');
+            p.style.display = 'block';
+
+        
+    </script>
 
 
